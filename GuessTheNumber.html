@@ -1,0 +1,35 @@
+<html>
+
+<body>
+    I'm thinking of a number between 1-100
+    <BR><br>
+    <input type="text" id=textbox />
+    <button id=guessbutton>Ударь Меня!</button>
+    <br><br>
+    <div id=message>
+    </div>
+
+    <script>
+        let guesscount = 0;
+        let number = Math.random() * 99 + 1;
+        number = Math.round(number);
+        let message = document.getElementById("message");
+
+        document.getElementById("guessbutton").onclick = function () {
+            let guess = +document.getElementById("textbox").value;
+            guesscount = guesscount + 1
+            if (number > guess) {
+                message.innerText = "Выше! Попытка " + guesscount + ".";
+            }
+            if (number < guess) {
+                message.innerText = "Ниже! Попытка " + guesscount + ".";
+            }
+            if (number === guess) {
+                message.innerText = "Так Точно! Попытка " + guesscount + ".";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

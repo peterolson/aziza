@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+    First Number
+    <input type="text" id="FirstNumber">
+    <br><br>
+    Second Number
+    <input type="text" id="SecondNumber">
+    <br><br>
+    <button id="MultiplyButton">*</button>
+    &nbsp;
+    <button id="DivisionButton"> /</button>
+    &nbsp;
+    <button id="PlusButton"> +</button>
+    &nbsp;
+    <button id="MinusButton"> -</button>
+    <br><br>
+    Answer
+    <input type="text" id="Answer">
+
+    <script>
+        let FirstNumber = document.getElementById("FirstNumber")
+        let SecondNumber = document.getElementById("SecondNumber")
+        let Answer = document.getElementById("Answer")
+        document.getElementById("MultiplyButton").onclick = function () {
+            Answer.value = Number(FirstNumber.value) * Number(SecondNumber.value)
+        }
+        document.getElementById("DivisionButton").onclick = function () {
+            Answer.value = Number(FirstNumber.value) / Number(SecondNumber.value)
+        }
+        document.getElementById("PlusButton").onclick = function () {
+            Answer.value = Number(FirstNumber.value) + Number(SecondNumber.value)
+        }
+        document.getElementById("MinusButton").onclick = function () {
+            Answer.value = Number(FirstNumber.value) - Number(SecondNumber.value)
+        }
+    </script>
+</body>
+
+</html>

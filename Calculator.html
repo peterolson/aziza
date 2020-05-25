@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+    First number:
+    <input type="text" id="firstNumber" />
+    <br />
+    <br />
+    Second number:
+    <input type="text" id="secondNumber" />
+    <br /><br />
+    <button id="addButton">+</button>
+    <button id="subtractButton">-</button>
+    <br /><br />
+    <input type="text" id="answer" />
+    <script>
+        let firstNumber = document.getElementById("firstNumber");
+        let secondNumber = document.getElementById("secondNumber");
+        let answer = document.getElementById("answer");
+        document.getElementById("addButton").onclick = function () {
+            answer.value = Number(firstNumber.value) + Number(secondNumber.value);
+        }
+        document.getElementById("subtractButton").onclick = function () {
+            answer.value = Number(firstNumber.value) - Number(secondNumber.value);
+        }
+    </script>
+</body>
+
+</html>
