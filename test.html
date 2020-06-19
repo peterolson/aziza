@@ -1,0 +1,168 @@
+<html>
+
+<body>
+    <h1>Intermediate Test</h1>
+    <h2>Grammar: Complete the second sentence with <b>two words</b> so that it means the same as the first. Contracted
+        forms, e.g. <i>isn't</i>, count as one word.</h2>
+    <h3>Example: I really think it's important for you to learn to drive.
+        <br>You really <u><i>must</i></u> <u><i>learn</i></u> to drive.
+    </h3>
+    <ol>
+        <li>
+            Why don't you join a tennis club?<br />
+            It would be good for you.<br />
+            I think you <input type="text" /> <input type="text" /> a tennis club.
+            <br><br>
+        </li>
+
+        <li>
+            I'm sure she's not American. She hasn't got an American accent.<br />
+            She <input type="text" /> <input type="text" /> American, she hasn't got an American accent.
+            <br><br>
+        </li>
+        <li>
+            I can't go out tonight. <br />
+            I won't <input type="text" /> <input type="text" /> to go out tonight.
+            <br><br>
+        </li>
+        <li>
+            It's prohibited to take photos there. <br />
+            You <input type="text" /> <input type="text" /> photos there.
+            <br><br>
+        </li>
+        <li>
+            I'm not sure if she'll like her present. <br />
+            She <input type="text" /> <input type="text" /> like her present.
+            <br><br>
+        </li>
+        <li>
+            Wearing a uniform is not obligatory. <br />
+            You <input type="text" /> <input type="text" /> to wear a uniform.
+            <br><br>
+        </li>
+        <li>
+            The lights are on so I'm sure he is at home. <br />
+            The lights are on so he <input type="text" /> <input type="text" /> at home.
+            <br><br>
+        </li>
+        <li>
+            I think perhaps this is their house. <br />
+            This <input type="text" /> <input type="text" /> their house.
+            <br><br>
+        </li>
+        <li>
+            Paying in advance is obligatory at this school. <br />
+            You <input type="text" /> <input type="text" /> pay in advance at this school.
+            <br><br>
+        </li>
+        <li>
+            Drinking a lot of coffe isn't a good idea. <br />
+            You <input type="text" /> <input type="text" /> a lot of coffee.
+            <br><br>
+        </li>
+    </ol>
+    <h2>Vocabulary</h2>
+    <ol type="a">
+        <li>Complete the description<br />
+            <img src="img/BlondeGirl.png" width="200" />
+            <br>My cousin Ann is very attractive. She's in her <sup>1</sup>m<input type="text" />-twenties -- 24 or
+            25 I
+            think.
+            She's blonde, with shoulder-<sup>2</sup>l<input type="text" /> hair. It's completely <sup>3</sup> s<input
+                type="text" />,
+            not curly at all. Her <sup>4</sup>f<input type="text" /> is very long and gets in her eyes. She's very
+            short-sighted but she
+            <sup>5</sup>w<input type="text" /> contact lenses.<br><br>
+        </li>
+        <li>Complete with an adjective from the <b>bold</b> verb.
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>Are you <input type="text" /> in sport?</td>
+                    <td><b>interest</b></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>I was very <input type="text" /> when I failed the exam.</td>
+                    <td><b>depress</b></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>This book is really <input type="text" />. I can't finish it.</td>
+                    <td><b>bore</b></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>I completely forgot his name. It was so <input type="text" /> !</td>
+                    <td><b>embarrass</b></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>I felt very <input type="text" /> because I just couldn't do it.</td>
+                    <td><b>frustrate</b></td>
+                </tr>
+            </table><br>
+        </li>
+        <li>Complete with one word.
+            <ol>
+                <li>Please switch <input type="text" /> your mobile. You can't use it here.</li>
+                <li>I'm afraid John is out. Can you call <input type="text" /> later?</li>
+                <li>I can't believe it! He hung <input type="text" /> in the middle of our conversation!</li>
+                <li>She looks <input type="text" /> her mother. They both have big eyes.</li>
+                <li>He's <input type="text" /> his late forties.</li>
+            </ol>
+        </li>
+    </ol>
+    <button id="btnSubmit">Submit!</button>
+    <b id="results"></b>
+    <script>
+        let correctAnswers = ["should", "join",
+            "can't", "be",
+            "be", "able",
+            "mustn't", "take",
+            "might", "not",
+            "don't", "have",
+            "must", "be",
+            "might", "be",
+            "have", "to",
+            "shouldn't", "drink",
+
+            "id", "ength",
+            "traight", "ringe", "ears",
+
+            "interested",
+            "depressed",
+            "boring",
+            "embarrassing",
+            "frustrated",
+
+            "off",
+            "back",
+            "up",
+            "like",
+            "in"];
+
+        let textInputs = document.querySelectorAll("input[type=text]");
+
+        document.getElementById("btnSubmit").onclick = function () {
+            let i = 0;
+            let correctCount = 0;
+            for (let input of textInputs) {
+                let userAnswer = input.value;
+                let correctAnswer = correctAnswers[i];
+                let isCorrect = userAnswer === correctAnswer;
+                if (isCorrect) {
+                    correctCount++;
+                } else {
+                    input.style.backgroundColor = "red";
+                }
+                i++;
+            }
+            let grade = (correctCount * 100) / textInputs.length;
+            document.getElementById("results").innerText = "You got " + correctCount + " correct answers out of " + textInputs.length + ". "
+                + "Your grade is " + grade.toFixed(1) + "%";
+        }
+    </script>
+</body>
+
+</html>
